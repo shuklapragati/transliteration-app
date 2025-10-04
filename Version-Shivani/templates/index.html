@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Transliteration App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Indic Script Transliteration</h1>
+    <form method="POST">
+      <label>Enter Text:</label><br>
+      <textarea name="input_text" rows="4" required></textarea><br><br>
+
+     <label>Source Language:</label>
+<select name="source_lang">
+  {% for key in languages %}
+    <option value="{{ key }}">{{ key }}</option>
+  {% endfor %}
+</select><br><br>
+
+<label>Target Language:</label>
+<select name="target_lang">
+  {% for key in languages %}
+    <option value="{{ key }}">{{ key }}</option>
+  {% endfor %}
+</select><br><br>
+
+
+      <button type="submit">Transliterate</button>
+    </form>
+  </div>
+</body>
+</html>
