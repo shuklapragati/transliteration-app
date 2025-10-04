@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Result</h1>
+    <p><strong>Input Text ({{ source_script }}):</strong> {{ input_text }}</p>
+    <p><strong>Output Text ({{ target_script }}):</strong> {{ result }}</p>
+
+    <a href="/">Back</a> | <a href="/history">History</a>
+  </div>
+</body>
+</html>

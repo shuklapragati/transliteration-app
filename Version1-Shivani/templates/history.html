@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>History</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Transliteration History</h1>
+    <table border="1" cellpadding="10" style="margin:auto;">
+      <tr>
+        <th>ID</th>
+        <th>Input Text</th>
+        <th>Output Text</th>
+        <th>Source Script</th>
+        <th>Target Script</th>
+      </tr>
+      {% for row in data %}
+      <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <br>
+    <a href="/">Back</a>
+  </div>
+</body>
+</html>

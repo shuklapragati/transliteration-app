@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OCR + Transliteration App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Indic Script Transliteration with OCR</h1>
+    <form method="POST" enctype="multipart/form-data">
+      <label>Enter Text (optional if uploading image):</label><br>
+      <textarea name="input_text" rows="4"></textarea><br><br>
+
+      <label>Upload Image (OCR):</label>
+      <input type="file" name="image_file"><br><br>
+
+      <label>Source Script:</label>
+      <select name="source_script">
+        {% for key in scripts %}
+          <option value="{{ key }}">{{ key.title() }}</option>
+        {% endfor %}
+      </select><br><br>
+
+      <label>Target Script:</label>
+      <select name="target_script">
+        {% for key in scripts %}
+          <option value="{{ key }}">{{ key.title() }}</option>
+        {% endfor %}
+      </select><br><br>
+
+      <button type="submit">Transliterate</button>
+    </form>
+
+    <p><a href="/history">View History</a></p>
+  </div>
+</body>
+</html>
