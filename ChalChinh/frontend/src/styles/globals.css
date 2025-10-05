@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: beige;
+  color: #2e6d57; /* soft green */
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.spinner {
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #cce3d1;
+  border-top: 5px solid #2e6d57;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
